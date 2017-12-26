@@ -58,7 +58,7 @@ export default {
         type: 'warning'
       })
       .then(() => {
-        return this.$delete(this.url, {id}).then(() => {
+        return this.$deleted(this.url, {id}).then(() => {
           this.$message.success('删除成功')
         })
       })

@@ -23,7 +23,7 @@ if (isProd) {
   uploadUrl = 'http://file.diamondfsd.com/upload'
 } else {
   // Vue.http.options.root = 'http://42.96.203.79:8080'
-  Vue.http.options.root = 'http://api.diamondfsd.com'
+  Vue.http.options.root = 'http://localhost:8889'
   uploadUrl = 'http://localhost:22222/upload'
 }
 
@@ -52,7 +52,7 @@ Vue.mixin({
     $get (url, data, options) {
       return this.$http.get(`${url}?${this.$serialize(data)}`, {headers: this.mix_headers, ...options})
     },
-    $delete (url, data, options) {
+    $deleted (url, data, options) {
       return this.$http.delete(`${url}?${this.$serialize(data)}`, {headers: this.mix_headers, ...options})
     },
     $serialize (data = {}) {
